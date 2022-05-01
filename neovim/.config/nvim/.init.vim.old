@@ -1,0 +1,61 @@
+set guicursor=
+set relativenumber
+set nu
+set nohlsearch
+set hidden
+set noerrorbells
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=10
+set noshowmode
+set completeopt=menuone,noinsert,noselect
+set signcolumn=yes
+set colorcolumn=80
+set signcolumn=yes
+
+
+call plug#begin()
+Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'
+Plug 'https://github.com/preservim/nerdtree' " NerdTree
+Plug 'gruvbox-community/gruvbox'
+Plug 'ThePrimeagen/vim-be-good'
+
+Plug 'neovim/nvim-lspconfig'
+
+call plug#end()
+
+colorscheme gruvbox
+"highlight Normal guibg=none
+
+
+
+nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-s> :w<CR>
+
+lua << EOF
+require'lspconfig'.clangd.setup{}
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+
+EOF
