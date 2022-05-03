@@ -44,6 +44,9 @@ Plug 'tpope/vim-commentary'
 
 Plug 'jiangmiao/auto-pairs'
 
+--Floating terminal windows
+Plug 'voldikss/vim-floaterm'
+
 vim.call("plug#end")
 
 vim.cmd [[
