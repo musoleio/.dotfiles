@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -123,11 +123,13 @@ alias db="sudo /opt/lampp/lampp startmysql" # start xampp's mysql sever
 alias msq="sudo /opt/lampp/bin/mysql -u root -p"
 alias python="python3"
 alias py="python3"
+alias lg="lazygit"
 alias work="cd $HOME/work/"
 alias vide="$HOME/.local/bin/neovide.AppImage"
+alias ff="fastfetch"
 
 # export PATH="$PATH:/home/skyee/.jdks/jdk-17.0.5+8/bin"
-export PATH="$PATH:$HOME/.jdks/jdk-21.0.1+12/bin"
+export PATH="$PATH:$HOME/.jdks/jdk-21/bin"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 # pnpm
 # export PNPM_HOME="/home/skyee/.local/share/pnpm"
@@ -165,3 +167,12 @@ else
 fi
 
 eval "$(zoxide init --cmd cd zsh)"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/skyee/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

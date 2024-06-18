@@ -13,7 +13,7 @@ config.color_scheme = "rose-pine"
 config.font = wezterm.font("Ubuntu Mono")
 config.font_size = 17
 -- config.harfbuzz_features = { 'calt=1', 'clig=0', 'liga=1' }
-config.line_height = 1.2
+-- config.line_height = 1.2
 
 config.enable_tab_bar = false
 config.window_padding = {
@@ -23,7 +23,8 @@ config.window_padding = {
 	bottom = 4,
 }
 
--- config.window_decorations = "RESIZE"
+config.enable_wayland = false
+config.window_decorations = "NONE"
 config.window_background_opacity = 0.95
 -- and finally, return the configuration to wezterm
 return config

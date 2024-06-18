@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -27,6 +27,8 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
+          "javascript",
+          "typescript",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -46,6 +48,11 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      -- prettier = {
+      --   cli_options = {
+      --     config_presense = "prefer-file",
+      --   },
+      -- },
     },
     -- customize how language servers are attached
     handlers = {
